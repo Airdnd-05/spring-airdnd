@@ -4,20 +4,18 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "wishlists")
+@Table(name = "wishLists")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Wishlist extends BaseEntity {
+public class WishList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "wish_id")
-    private Long wishId;
+    @Column(name = "wishList_id")
+    private Long wishListId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "rooms_id", nullable = false)
+    @JoinColumn(name = "room_id", nullable = false)
     private Room room;
 
     @ManyToOne(fetch = FetchType.LAZY)

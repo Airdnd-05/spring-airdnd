@@ -8,18 +8,16 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "reservations")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Reservation extends BaseEntity {
+public class Reservation{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "reservation_id")
     private Long reservationId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "rooms_id", nullable = false)
+    @JoinColumn(name = "room_id", nullable = false)
     private Room room;
 
     @ManyToOne(fetch = FetchType.LAZY)

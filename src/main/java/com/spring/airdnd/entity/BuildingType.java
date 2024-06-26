@@ -9,11 +9,9 @@ import java.util.List;
 @Entity
 @Table(name = "building_types")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class BuildingType extends BaseEntity {
+public class BuildingType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "building_type_id")
@@ -22,7 +20,4 @@ public class BuildingType extends BaseEntity {
     @Column(name = "building_type", nullable = false)
     private String buildingType;
 
-    @OneToMany(mappedBy = "buildingType", fetch = FetchType.LAZY)
-    @Builder.Default
-    private List<Room> rooms = new ArrayList<>();
 }

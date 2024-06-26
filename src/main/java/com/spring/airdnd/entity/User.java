@@ -9,11 +9,9 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class User extends BaseEntity {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
@@ -50,14 +48,11 @@ public class User extends BaseEntity {
     private Host host;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    @Builder.Default
-    private List<Review> reviews = new ArrayList<>();
+    private List<Review> reviewList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    @Builder.Default
-    private List<Reservation> reservations = new ArrayList<>();
+    private List<Reservation> reservationList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    @Builder.Default
-    private List<Wishlist> wishlists = new ArrayList<>();
+    private List<WishList> wishListList = new ArrayList<>();
 }

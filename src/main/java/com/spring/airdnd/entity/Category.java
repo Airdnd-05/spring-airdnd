@@ -9,11 +9,9 @@ import java.util.List;
 @Entity
 @Table(name = "categories")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Category extends BaseEntity {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "category_id")
@@ -26,6 +24,5 @@ public class Category extends BaseEntity {
     private String categorySvg;
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
-    @Builder.Default
-    private List<RoomsCategory> roomsCategories = new ArrayList<>();
+    private List<RoomCategory> roomCategoryList = new ArrayList<>();
 }
