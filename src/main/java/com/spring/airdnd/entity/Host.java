@@ -11,11 +11,9 @@ import java.util.List;
 @Entity
 @Table(name = "hosts")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Host extends BaseEntity {
+public class Host {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "host_id")
@@ -55,11 +53,7 @@ public class Host extends BaseEntity {
     @Column(name = "host_url")
     private String hostUrl;
 
-    @Temporal(TemporalType.DATE)
     @Column(name = "host_starting_year", nullable = false)
     private LocalDate hostStartingYear;
 
-    @OneToMany(mappedBy = "host", fetch = FetchType.LAZY)
-    @Builder.Default
-    private List<Room> rooms = new ArrayList<>();
 }

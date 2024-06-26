@@ -6,18 +6,16 @@ import lombok.*;
 @Entity
 @Table(name = "bedroom_types")
 @Getter
-@Setter
-@NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class BedroomType extends BaseEntity {
+@NoArgsConstructor
+public class BedroomType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "bedroom_id")
     private Long bedroomId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "rooms_id", nullable = false)
+    @JoinColumn(name = "room_id", nullable = false)
     private Room room;
 
     @Column(name = "type_bedroom_name", nullable = false)

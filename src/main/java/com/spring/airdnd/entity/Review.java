@@ -8,11 +8,9 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "reviews")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Review extends BaseEntity {
+public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "review_id")
@@ -23,25 +21,25 @@ public class Review extends BaseEntity {
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "accommodation_id", nullable = false)
+    @JoinColumn(name = "room_id", nullable = false)
     private Room room;
 
-    @Column(name = "review_cleanliness_raiting", nullable = false)
+    @Column(name = "review_cleanliness_rating", nullable = false)
     private float reviewCleanlinessRating;
 
-    @Column(name = "review_accuracy_raiting", nullable = false)
+    @Column(name = "review_accuracy_rating", nullable = false)
     private float reviewAccuracyRating;
 
-    @Column(name = "review_check_in_raiting", nullable = false)
+    @Column(name = "review_check_in_rating", nullable = false)
     private float reviewCheckInRating;
 
-    @Column(name = "review_communication_raiting", nullable = false)
+    @Column(name = "review_communication_rating", nullable = false)
     private float reviewCommunicationRating;
 
-    @Column(name = "review_location_raiting", nullable = false)
+    @Column(name = "review_location_rating", nullable = false)
     private float reviewLocationRating;
 
-    @Column(name = "review_value_raiting", nullable = false)
+    @Column(name = "review_value_rating", nullable = false)
     private float reviewValueRating;
 
     @Column(name = "review_content", nullable = false)
