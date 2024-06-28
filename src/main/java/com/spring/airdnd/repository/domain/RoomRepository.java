@@ -1,4 +1,4 @@
-package com.spring.airdnd.repository.detailPage;
+package com.spring.airdnd.repository.domain;
 
 import com.spring.airdnd.entity.Room;
 import org.springframework.data.jpa.repository.JpaRepository;
