@@ -1,8 +1,8 @@
-package com.spring.airdnd.service;
+package com.spring.airdnd.service.detailPage;
 
-import com.spring.airdnd.dto.RoomResponseDTO;
+import com.spring.airdnd.dto.detailPage.RoomResponseDTO;
 import com.spring.airdnd.entity.Room;
-import com.spring.airdnd.repository.RoomRepository;
+import com.spring.airdnd.repository.detailPage.RoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

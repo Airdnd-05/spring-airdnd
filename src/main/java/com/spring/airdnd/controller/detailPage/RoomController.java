@@ -1,7 +1,7 @@
-package com.spring.airdnd.controller;
+package com.spring.airdnd.controller.detailPage;
 
-import com.spring.airdnd.dto.RoomResponseDTO;
-import com.spring.airdnd.service.RoomService;
+import com.spring.airdnd.dto.detailPage.RoomResponseDTO;
+import com.spring.airdnd.service.detailPage.RoomService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
