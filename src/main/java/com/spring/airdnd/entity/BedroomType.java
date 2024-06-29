@@ -2,6 +2,7 @@ package com.spring.airdnd.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "bedroom_types")
@@ -21,9 +22,7 @@ public class BedroomType {
     @Column(name = "type_bedroom_name", nullable = false)
     private String typeBedroomName;
 
-    @Column(name = "type_bed", nullable = false)
+    @Column(name = "type_bed_and_icon", nullable = false, columnDefinition = "json")
     private String typeBed;
 
-    @Column(name = "type_bed_icon", nullable = false)
-    private String typeBedIcon;
 }
