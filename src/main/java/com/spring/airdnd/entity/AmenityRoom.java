@@ -15,7 +15,7 @@ public class AmenityRoom {
     private Long amenityRoomId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "room_id", nullable = false)
+    @JoinColumn(name = "rooms_id", nullable = false)
     private Room room;
 
     @ManyToOne(fetch = FetchType.LAZY)
