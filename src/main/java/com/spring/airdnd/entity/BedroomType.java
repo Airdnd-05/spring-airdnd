@@ -23,6 +23,6 @@ public class BedroomType {
     private String typeBedroomName;
 
     @Column(name = "type_bed_and_icon", nullable = false, columnDefinition = "json")
-    private String typeBed;
+    private String typeBedAndIcon;
 
 }
