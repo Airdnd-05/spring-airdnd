@@ -18,4 +18,10 @@ public class RoomService {
         Optional<Room> room = this.roomRepository.findById(roomId);
         return RoomResponseDTO.from(room.get());
     }
+
+    public String getRoomInfo(Long roomId){
+        Room room = this.roomRepository.findByRoomId(roomId);
+        return room.getRoomInfo();
+    }
+
 }
