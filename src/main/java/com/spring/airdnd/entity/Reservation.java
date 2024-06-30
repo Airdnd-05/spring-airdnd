@@ -8,8 +8,9 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "reservations")
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class Reservation{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +19,12 @@ public class Reservation{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id", nullable = false)
+    @ToString.Exclude
     private Room room;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @ToString.Exclude
     private User user;
 
     @Column(name = "reservation_check_in", nullable = false)
@@ -34,11 +37,23 @@ public class Reservation{
     private Integer reservationPetCount;
 
     @Column(name = "reservation_guest_count", nullable = false)
-    private int reservationGuestCount;
+    private Integer reservationGuestCount;
 
     @Column(name = "reservation_infant_count")
     private Integer reservationInfantCount;
 
     @Column(name = "reservation_date", nullable = false)
     private LocalDateTime reservationDate;
+
+//    @Builder
+//    private Reservation(Room room, User user, LocalDateTime reservationCheckIn, LocalDateTime reservationCheckOut, Integer reservationPetCount, int reservationGuestCount, Integer reservationInfantCount, LocalDateTime reservationDate) {
+//        this.room = room;
+//        this.user = user;
+//        this.reservationCheckIn = reservationCheckIn;
+//        this.reservationCheckOut = reservationCheckOut;
+//        this.reservationPetCount = reservationPetCount;
+//        this.reservationGuestCount = reservationGuestCount;
+//        this.reservationInfantCount = reservationInfantCount;
+//        this.reservationDate = reservationDate;
+//    }
 }

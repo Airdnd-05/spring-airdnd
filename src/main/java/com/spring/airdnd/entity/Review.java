@@ -8,8 +8,9 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "reviews")
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,36 +19,53 @@ public class Review {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @ToString.Exclude
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id", nullable = false)
+    @ToString.Exclude
     private Room room;
 
     @Column(name = "review_cleanliness_rating", nullable = false)
-    private float reviewCleanlinessRating;
+    private Float reviewCleanlinessRating;
 
     @Column(name = "review_accuracy_rating", nullable = false)
-    private float reviewAccuracyRating;
+    private Float reviewAccuracyRating;
 
     @Column(name = "review_check_in_rating", nullable = false)
-    private float reviewCheckInRating;
+    private Float reviewCheckInRating;
 
     @Column(name = "review_communication_rating", nullable = false)
-    private float reviewCommunicationRating;
+    private Float reviewCommunicationRating;
 
     @Column(name = "review_location_rating", nullable = false)
-    private float reviewLocationRating;
+    private Float reviewLocationRating;
 
     @Column(name = "review_value_rating", nullable = false)
-    private float reviewValueRating;
+    private Float reviewValueRating;
 
-    @Column(name = "review_content", nullable = false)
+    @Column(name = "review_content", nullable = false, length = 500)
     private String reviewContent;
 
     @Column(name = "review_avg", nullable = false)
-    private float reviewAvg;
+    private Float reviewAvg;
 
     @Column(name = "review_date", nullable = false)
     private LocalDateTime reviewDate;
+
+//    @Builder
+//    private Review(User user, Room room, Float reviewCleanlinessRating, Float reviewAccuracyRating, Float reviewCheckInRating, Float reviewCommunicationRating, Float reviewLocationRating, Float reviewValueRating, String reviewContent, Float reviewAvg, LocalDateTime reviewDate) {
+//        this.user = user;
+//        this.room = room;
+//        this.reviewCleanlinessRating = reviewCleanlinessRating;
+//        this.reviewAccuracyRating = reviewAccuracyRating;
+//        this.reviewCheckInRating = reviewCheckInRating;
+//        this.reviewCommunicationRating = reviewCommunicationRating;
+//        this.reviewLocationRating = reviewLocationRating;
+//        this.reviewValueRating = reviewValueRating;
+//        this.reviewContent = reviewContent;
+//        this.reviewAvg = reviewAvg;
+//        this.reviewDate = reviewDate;
+//    }
 }

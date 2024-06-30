@@ -3,21 +3,23 @@ package com.spring.airdnd.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Table(name = "building_types")
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class BuildingType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "building_type_id")
     private Long buildingTypeId;
 
-    @Column(name = "building_type", nullable = false)
+    @Column(name = "building_type", nullable = false, length = 50)
     private String buildingType;
 
+//    @Builder
+//    private BuildingType(String buildingType) {
+//        this.buildingType = buildingType;
+//    }
 }
