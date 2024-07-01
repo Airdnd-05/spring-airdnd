@@ -1,6 +1,6 @@
 package com.spring.airdnd.controller.common;
 
-import com.spring.airdnd.dto.detailPage.RoomsImageResponseDTO;
+import com.spring.airdnd.dto.common.RoomsImageResponseDTO;
 import com.spring.airdnd.service.common.RoomsImageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

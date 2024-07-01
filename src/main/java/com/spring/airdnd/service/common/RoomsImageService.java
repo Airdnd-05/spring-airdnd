@@ -1,6 +1,6 @@
 package com.spring.airdnd.service.common;
 
-import com.spring.airdnd.dto.detailPage.RoomsImageResponseDTO;
+import com.spring.airdnd.dto.common.RoomsImageResponseDTO;
 import com.spring.airdnd.repository.domain.RoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
