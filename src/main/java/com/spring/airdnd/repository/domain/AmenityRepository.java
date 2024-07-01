@@ -12,6 +12,6 @@ import java.util.List;
 public interface AmenityRepository extends JpaRepository<Amenity, Long> {
 
     @Query("SELECT DISTINCT a FROM Amenity a JOIN FETCH a.amenityRoomList ar JOIN FETCH ar.room r WHERE r.roomId = :roomId")
-    List<Amenity> findByRoom(@Param("roomId") Long roomId);
+    List<Amenity> findByRoom_roomId(@Param("roomId") Long roomId);
 
 }
