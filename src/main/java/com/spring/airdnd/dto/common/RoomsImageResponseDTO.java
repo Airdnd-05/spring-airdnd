@@ -1,4 +1,4 @@
-package com.spring.airdnd.dto.detailPage;
+package com.spring.airdnd.dto.common;
 
 import com.spring.airdnd.entity.Room;
 import lombok.AccessLevel;
