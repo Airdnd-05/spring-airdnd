@@ -2,13 +2,13 @@ package com.spring.airdnd.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "bedroom_types")
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class BedroomType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,12 +17,19 @@ public class BedroomType {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id", nullable = false)
+    @ToString.Exclude
     private Room room;
 
-    @Column(name = "type_bedroom_name", nullable = false)
+    @Column(name = "type_bedroom_name", nullable = false, length = 50)
     private String typeBedroomName;
 
     @Column(name = "type_bed_and_icon", nullable = false, columnDefinition = "json")
     private String typeBed;
 
+//    @Builder
+//    private BedroomType(Room room, String typeBedroomName, String typeBed) {
+//        this.room = room;
+//        this.typeBedroomName = typeBedroomName;
+//        this.typeBed = typeBed;
+//    }
 }

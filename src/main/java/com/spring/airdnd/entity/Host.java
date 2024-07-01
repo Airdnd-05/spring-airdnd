@@ -3,16 +3,12 @@ package com.spring.airdnd.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 @Entity
 @Table(name = "hosts")
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class Host {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,30 +17,31 @@ public class Host {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @ToString.Exclude
     private User user;
 
     @Column(name = "host_experience", nullable = false)
-    private int hostExperience;
+    private Integer hostExperience;
 
     @Column(name = "host_review_count")
-    private int hostReviewCount;
+    private Integer hostReviewCount;
 
     @Column(name = "host_rate")
-    private float hostRate;
+    private Float hostRate;
 
-    @Column(name = "host_language")
+    @Column(name = "host_language", length = 50)
     private String hostLanguage;
 
     @Column(name = "host_is_super", nullable = false)
     private Boolean hostIsSuper;
 
     @Column(name = "host_response_rate", nullable = false)
-    private int hostResponseRate;
+    private Integer hostResponseRate;
 
     @Column(name = "host_response_time", nullable = false)
-    private int hostResponseTime;
+    private Integer hostResponseTime;
 
-    @Column(name = "host_description")
+    @Column(name = "host_description", length = 1000)
     private String hostDescription;
 
     @Column(name = "host_location")
@@ -54,6 +51,21 @@ public class Host {
     private String hostUrl;
 
     @Column(name = "host_starting_year", nullable = false)
-    private LocalDate hostStartingYear;
+    private Integer hostStartingYear;
 
+//    @Builder
+//    private Host(User user, Integer hostExperience, Integer hostReviewCount, Float hostRate, String hostLanguage, Boolean hostIsSuper, Integer hostResponseRate, Integer hostResponseTime, String hostDescription, String hostLocation, String hostUrl, Integer hostStartingYear) {
+//        this.user = user;
+//        this.hostExperience = hostExperience;
+//        this.hostReviewCount = hostReviewCount;
+//        this.hostRate = hostRate;
+//        this.hostLanguage = hostLanguage;
+//        this.hostIsSuper = hostIsSuper;
+//        this.hostResponseRate = hostResponseRate;
+//        this.hostResponseTime = hostResponseTime;
+//        this.hostDescription = hostDescription;
+//        this.hostLocation = hostLocation;
+//        this.hostUrl = hostUrl;
+//        this.hostStartingYear = hostStartingYear;
+//    }
 }

@@ -11,27 +11,31 @@ import java.util.List;
 @Entity
 @Table(name = "rooms")
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "room_id")
     private Long roomId;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "host_id", nullable = false)
-//    private Host host;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "host_id", nullable = false)
+    @ToString.Exclude
+    private Host host;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "location_id", nullable = false)
+    @ToString.Exclude
     private Location location;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "building_type_id", nullable = false)
+    @ToString.Exclude
     private BuildingType buildingType;
 
-    @Column(name = "room_name", nullable = false)
+    @Column(name = "room_name", nullable = false, length = 50)
     private String roomName;
 
     @Column(name = "room_info", nullable = false)
@@ -41,9 +45,9 @@ public class Room {
     private Boolean roomGuestFavorite;
 
     @Column(name = "room_price_per_day", nullable = false)
-    private int roomPricePerDay;
+    private Long roomPricePerDay;
 
-    @Column(name = "room_description", nullable = false)
+    @Column(name = "room_description", nullable = false, length = 1000)
     private String roomDescription;
 
     @Column(name = "room_available_start_date", nullable = false)
@@ -59,16 +63,16 @@ public class Room {
     private Boolean roomIsPet;
 
     @Column(name = "room_available_guest_count", nullable = false)
-    private int roomAvailableGuestCount;
+    private Integer roomAvailableGuestCount;
 
     @Column(name = "room_bedroom_count", nullable = false)
-    private int roomBedroomCount;
+    private Integer roomBedroomCount;
 
     @Column(name = "room_bed_count", nullable = false)
-    private int roomBedCount;
+    private Integer roomBedCount;
 
     @Column(name = "room_bathroom_count", nullable = false)
-    private int roomBathroomCount;
+    private Integer roomBathroomCount;
 
     @Column(name = "room_self_check_in", nullable = false)
     private Boolean roomSelfCheckIn;
@@ -76,22 +80,27 @@ public class Room {
     @Column(name = "room_immediate_reservation", nullable = false)
     private Boolean roomImmediateReservation;
 
-    @Column(name = "room_rent_type", nullable = false)
+    @Column(name = "room_rent_type", nullable = false, length = 30)
     private String roomRentType;
 
     @Column(name = "room_url_1", nullable = false)
+    @ToString.Exclude
     private String roomUrl1;
 
     @Column(name = "room_url_2", nullable = false)
+    @ToString.Exclude
     private String roomUrl2;
 
     @Column(name = "room_url_3", nullable = false)
+    @ToString.Exclude
     private String roomUrl3;
 
     @Column(name = "room_url_4", nullable = false)
+    @ToString.Exclude
     private String roomUrl4;
 
     @Column(name = "room_url_5", nullable = false)
+    @ToString.Exclude
     private String roomUrl5;
 
     @Column(name = "room_cleanliness_avg")
@@ -125,20 +134,64 @@ public class Room {
     private BigDecimal roomLongitude;
 
     @Column(name = "room_distance_to_seoul", nullable = false)
-    private int roomDistanceToSeoul;
+    private Integer roomDistanceToSeoul;
 
     @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
+    @ToString.Exclude
     private List<AmenityRoom> amenityRoomList = new ArrayList<>();
 
     @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
+    @ToString.Exclude
     private List<RoomCategory> roomsCategoryList = new ArrayList<>();
 
     @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
+    @ToString.Exclude
     private List<Review> reviewList = new ArrayList<>();
 
     @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
+    @ToString.Exclude
     private List<Reservation> reservationList = new ArrayList<>();
 
     @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
+    @ToString.Exclude
     private List<WishList> wishListList = new ArrayList<>();
+
+//    @Builder
+//    private Room(Host host, Location location, BuildingType buildingType, String roomName, String roomInfo, Boolean roomGuestFavorite, Long roomPricePerDay, String roomDescription, LocalDateTime roomAvailableStartDate, LocalDateTime roomAvailableEndDate, Boolean roomIsInfant, Boolean roomIsPet, Integer roomAvailableGuestCount, Integer roomBedroomCount, Integer roomBedCount, Integer roomBathroomCount, Boolean roomSelfCheckIn, Boolean roomImmediateReservation, String roomRentType, String roomUrl1, String roomUrl2, String roomUrl3, String roomUrl4, String roomUrl5, Float roomCleanlinessAvg, Float roomAccuracyAvg, Float roomCheckInAvg, Float roomCommunicationAvg, Float roomLocationAvg, Float roomValueAvg, Float roomOverallAvg, Integer roomReviewCount, BigDecimal roomLatitude, BigDecimal roomLongitude, Integer roomDistanceToSeoul) {
+//        this.host = host;
+//        this.location = location;
+//        this.buildingType = buildingType;
+//        this.roomName = roomName;
+//        this.roomInfo = roomInfo;
+//        this.roomGuestFavorite = roomGuestFavorite;
+//        this.roomPricePerDay = roomPricePerDay;
+//        this.roomDescription = roomDescription;
+//        this.roomAvailableStartDate = roomAvailableStartDate;
+//        this.roomAvailableEndDate = roomAvailableEndDate;
+//        this.roomIsInfant = roomIsInfant;
+//        this.roomIsPet = roomIsPet;
+//        this.roomAvailableGuestCount = roomAvailableGuestCount;
+//        this.roomBedroomCount = roomBedroomCount;
+//        this.roomBedCount = roomBedCount;
+//        this.roomBathroomCount = roomBathroomCount;
+//        this.roomSelfCheckIn = roomSelfCheckIn;
+//        this.roomImmediateReservation = roomImmediateReservation;
+//        this.roomRentType = roomRentType;
+//        this.roomUrl1 = roomUrl1;
+//        this.roomUrl2 = roomUrl2;
+//        this.roomUrl3 = roomUrl3;
+//        this.roomUrl4 = roomUrl4;
+//        this.roomUrl5 = roomUrl5;
+//        this.roomCleanlinessAvg = roomCleanlinessAvg;
+//        this.roomAccuracyAvg = roomAccuracyAvg;
+//        this.roomCheckInAvg = roomCheckInAvg;
+//        this.roomCommunicationAvg = roomCommunicationAvg;
+//        this.roomLocationAvg = roomLocationAvg;
+//        this.roomValueAvg = roomValueAvg;
+//        this.roomOverallAvg = roomOverallAvg;
+//        this.roomReviewCount = roomReviewCount;
+//        this.roomLatitude = roomLatitude;
+//        this.roomLongitude = roomLongitude;
+//        this.roomDistanceToSeoul = roomDistanceToSeoul;
+//    }
 }
