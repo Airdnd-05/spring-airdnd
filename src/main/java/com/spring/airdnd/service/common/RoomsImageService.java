@@ -13,11 +13,13 @@ import java.util.stream.Collectors;
 public class RoomsImageService {
     private final RoomRepository roomRepository;
 
-//    public List<RoomsImageResponseDTO> getRoomsImage() {
-//        return roomRepository.findAll().stream()
-//                .map(RoomsImageResponseDTO::from)
-//                .collect(Collectors.toList());
-//    }
+    public RoomsImageResponseDTO getRoomsImage(Long id) {
+        return RoomsImageResponseDTO.from(
+                this.roomRepository
+                        .findById(id)
+                        .orElseThrow(() -> new IllegalArgumentException("해당 ID에 해당하는 데이터가 없습니다"))
+        );
+    }
     public List<RoomsImageResponseDTO> getRoomsImageList() {
         return roomRepository.findAll().stream()
                 .map(RoomsImageResponseDTO::from)
