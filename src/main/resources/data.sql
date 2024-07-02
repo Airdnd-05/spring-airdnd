@@ -318,4 +318,12 @@ INSERT INTO `histogram_data` (price_range, count) VALUES
 INSERT INTO contents (content_component, content_name, content)
 VALUES
     ('BookingOptionFilter', 'option1', '{"title":"셀프 체크인", "description": "숙소에 도착한 후 복잡한 절차 없이 쉽게 입실할 수 있습니다. "}'),
-    ('BookingOptionFilter', 'option2', '{"title": "반려동물 동반 가능", "description": "보조 동물을 동반하시나요?"}');
+    ('BookingOptionFilter', 'option2', '{"title": "반려동물 동반 가능", "description": "보조 동물을 동반하시나요?"}'),
+    ('BuildingTypeFilter', 'option1', '{"type": "단독 또는 다세대 주택", "image": "/images/BuildingTypeHome.jpg"}'),
+    ('BuildingTypeFilter', 'option2', '{"type": "아파트", "image": "/images/BuildingTypeApart.jpg"}'),
+    ('BuildingTypeFilter', 'option3', '{"type": "게스트용 별채", "image": "/images/BuildingTypeVilla.jpg"}'),
+    ('RoomTypeFilter', 'option1', '{"type": "", "description": "방, 집 전체 등 원하는 숙소 유형을 검색해 보세요."}'),
+    ('RoomTypeFilter', 'option2', '{"type": "방", "description": "단독으로 사용하는 방이 있고, 공용 공간도 있는 형태입니다."}'),
+    ('RoomTypeFilter', 'option3', '{"type": "집 전체", "description": "집 전체를 단독으로 사용합니다."}');
+
+select * from contents;

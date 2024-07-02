@@ -21,7 +21,8 @@ public class ContentController {
 
     private final ContentService contentService;
 
-    @GetMapping("/{contentName}")
+
+    @GetMapping("/booking/{contentName}")
     public ResponseEntity<List<ContentResponseDTO>> getBookingOptionContent(@PathVariable String contentName){
 
         List<ContentResponseDTO> contentList = contentService.findByContentName(contentName);

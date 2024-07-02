@@ -25,12 +25,12 @@ public class Room {
     @ToString.Exclude
     private Host host;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_id", nullable = false)
     @ToString.Exclude
     private Location location;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "building_type_id", nullable = false)
     @ToString.Exclude
     private BuildingType buildingType;
