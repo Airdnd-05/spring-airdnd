@@ -6,8 +6,8 @@ import lombok.*;
 @Entity
 @Table(name = "rooms_categories")
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class RoomCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

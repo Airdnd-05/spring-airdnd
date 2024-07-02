@@ -6,8 +6,8 @@ import lombok.*;
 @Entity
 @Table(name = "wishLists")
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class WishList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
