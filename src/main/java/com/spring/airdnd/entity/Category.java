@@ -27,10 +27,4 @@ public class Category {
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     @ToString.Exclude
     private List<RoomCategory> roomCategoryList = new ArrayList<>();
-
-//    @Builder
-//    private Category(String categoryName, String categorySvg) {
-//        this.categoryName = categoryName;
-//        this.categorySvg = categorySvg;
-//    }
 }

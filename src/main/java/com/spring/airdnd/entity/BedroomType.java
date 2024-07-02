@@ -25,11 +25,4 @@ public class BedroomType {
 
     @Column(name = "type_bed_and_icon", nullable = false, columnDefinition = "json")
     private String typeBed;
-
-//    @Builder
-//    private BedroomType(Room room, String typeBedroomName, String typeBed) {
-//        this.room = room;
-//        this.typeBedroomName = typeBedroomName;
-//        this.typeBed = typeBed;
-//    }
 }

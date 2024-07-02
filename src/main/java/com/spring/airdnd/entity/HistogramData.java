@@ -20,11 +20,4 @@ public class HistogramData {
 
     @Column(name = "count", nullable = false)
     private Integer count;
-
-//    @Builder
-//    public HistogramData(Integer histogramId, String priceRange, Integer count) {
-//        this.histogramId = histogramId;
-//        this.priceRange = priceRange;
-//        this.count = count;
-//    }
 }

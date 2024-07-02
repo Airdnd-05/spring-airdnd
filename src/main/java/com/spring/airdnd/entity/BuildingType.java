@@ -17,9 +17,4 @@ public class BuildingType {
 
     @Column(name = "building_type", nullable = false, length = 50)
     private String buildingType;
-
-//    @Builder
-//    private BuildingType(String buildingType) {
-//        this.buildingType = buildingType;
-//    }
 }

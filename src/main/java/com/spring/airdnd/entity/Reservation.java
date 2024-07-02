@@ -44,16 +44,4 @@ public class Reservation{
 
     @Column(name = "reservation_date", nullable = false)
     private LocalDateTime reservationDate;
-
-//    @Builder
-//    private Reservation(Room room, User user, LocalDateTime reservationCheckIn, LocalDateTime reservationCheckOut, Integer reservationPetCount, int reservationGuestCount, Integer reservationInfantCount, LocalDateTime reservationDate) {
-//        this.room = room;
-//        this.user = user;
-//        this.reservationCheckIn = reservationCheckIn;
-//        this.reservationCheckOut = reservationCheckOut;
-//        this.reservationPetCount = reservationPetCount;
-//        this.reservationGuestCount = reservationGuestCount;
-//        this.reservationInfantCount = reservationInfantCount;
-//        this.reservationDate = reservationDate;
-//    }
 }

@@ -30,11 +30,4 @@ public class Amenity {
 
     @Column(name = "amenity_name", nullable = false, length = 50)
     private String amenityName;
-
-//    @Builder
-//    private Amenity(String amenitySvg, String amenityGroup, String amenityName) {
-//        this.amenitySvg = amenitySvg;
-//        this.amenityGroup = amenityGroup;
-//        this.amenityName = amenityName;
-//    }
 }

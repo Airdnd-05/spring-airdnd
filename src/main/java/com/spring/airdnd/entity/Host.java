@@ -52,20 +52,4 @@ public class Host {
 
     @Column(name = "host_starting_year", nullable = false)
     private Integer hostStartingYear;
-
-//    @Builder
-//    private Host(User user, Integer hostExperience, Integer hostReviewCount, Float hostRate, String hostLanguage, Boolean hostIsSuper, Integer hostResponseRate, Integer hostResponseTime, String hostDescription, String hostLocation, String hostUrl, Integer hostStartingYear) {
-//        this.user = user;
-//        this.hostExperience = hostExperience;
-//        this.hostReviewCount = hostReviewCount;
-//        this.hostRate = hostRate;
-//        this.hostLanguage = hostLanguage;
-//        this.hostIsSuper = hostIsSuper;
-//        this.hostResponseRate = hostResponseRate;
-//        this.hostResponseTime = hostResponseTime;
-//        this.hostDescription = hostDescription;
-//        this.hostLocation = hostLocation;
-//        this.hostUrl = hostUrl;
-//        this.hostStartingYear = hostStartingYear;
-//    }
 }

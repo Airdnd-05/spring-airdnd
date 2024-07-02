@@ -23,12 +23,4 @@ public class Content {
 
     @Column(name = "content", nullable = false, columnDefinition = "json")
     private String content;
-
-//    @Builder
-//    public Content(Integer contentId, String contentComponent, String contentName, String content) {
-//        this.contentId = contentId;
-//        this.contentComponent = contentComponent;
-//        this.contentName = contentName;
-//        this.content = content;
-//    }
 }

@@ -155,43 +155,4 @@ public class Room {
     @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
     @ToString.Exclude
     private List<WishList> wishListList = new ArrayList<>();
-
-//    @Builder
-//    private Room(Host host, Location location, BuildingType buildingType, String roomName, String roomInfo, Boolean roomGuestFavorite, Long roomPricePerDay, String roomDescription, LocalDateTime roomAvailableStartDate, LocalDateTime roomAvailableEndDate, Boolean roomIsInfant, Boolean roomIsPet, Integer roomAvailableGuestCount, Integer roomBedroomCount, Integer roomBedCount, Integer roomBathroomCount, Boolean roomSelfCheckIn, Boolean roomImmediateReservation, String roomRentType, String roomUrl1, String roomUrl2, String roomUrl3, String roomUrl4, String roomUrl5, Float roomCleanlinessAvg, Float roomAccuracyAvg, Float roomCheckInAvg, Float roomCommunicationAvg, Float roomLocationAvg, Float roomValueAvg, Float roomOverallAvg, Integer roomReviewCount, BigDecimal roomLatitude, BigDecimal roomLongitude, Integer roomDistanceToSeoul) {
-//        this.host = host;
-//        this.location = location;
-//        this.buildingType = buildingType;
-//        this.roomName = roomName;
-//        this.roomInfo = roomInfo;
-//        this.roomGuestFavorite = roomGuestFavorite;
-//        this.roomPricePerDay = roomPricePerDay;
-//        this.roomDescription = roomDescription;
-//        this.roomAvailableStartDate = roomAvailableStartDate;
-//        this.roomAvailableEndDate = roomAvailableEndDate;
-//        this.roomIsInfant = roomIsInfant;
-//        this.roomIsPet = roomIsPet;
-//        this.roomAvailableGuestCount = roomAvailableGuestCount;
-//        this.roomBedroomCount = roomBedroomCount;
-//        this.roomBedCount = roomBedCount;
-//        this.roomBathroomCount = roomBathroomCount;
-//        this.roomSelfCheckIn = roomSelfCheckIn;
-//        this.roomImmediateReservation = roomImmediateReservation;
-//        this.roomRentType = roomRentType;
-//        this.roomUrl1 = roomUrl1;
-//        this.roomUrl2 = roomUrl2;
-//        this.roomUrl3 = roomUrl3;
-//        this.roomUrl4 = roomUrl4;
-//        this.roomUrl5 = roomUrl5;
-//        this.roomCleanlinessAvg = roomCleanlinessAvg;
-//        this.roomAccuracyAvg = roomAccuracyAvg;
-//        this.roomCheckInAvg = roomCheckInAvg;
-//        this.roomCommunicationAvg = roomCommunicationAvg;
-//        this.roomLocationAvg = roomLocationAvg;
-//        this.roomValueAvg = roomValueAvg;
-//        this.roomOverallAvg = roomOverallAvg;
-//        this.roomReviewCount = roomReviewCount;
-//        this.roomLatitude = roomLatitude;
-//        this.roomLongitude = roomLongitude;
-//        this.roomDistanceToSeoul = roomDistanceToSeoul;
-//    }
 }

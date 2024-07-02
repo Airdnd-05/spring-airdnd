@@ -56,17 +56,4 @@ public class User {
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<WishList> wishListList = new ArrayList<>();
-
-//    @Builder
-//    private User(String userLastname, String userFirstname, String userNickname, String userEmail, String userPhone, Boolean userGovernmentId, String userAddress, String userEmergencyContact, Boolean userIsHost) {
-//        this.userLastname = userLastname;
-//        this.userFirstname = userFirstname;
-//        this.userNickname = userNickname;
-//        this.userEmail = userEmail;
-//        this.userPhone = userPhone;
-//        this.userGovernmentId = userGovernmentId;
-//        this.userAddress = userAddress;
-//        this.userEmergencyContact = userEmergencyContact;
-//        this.userIsHost = userIsHost;
-//    }
 }

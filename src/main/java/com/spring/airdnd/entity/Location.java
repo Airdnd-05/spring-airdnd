@@ -23,11 +23,4 @@ public class Location {
 
     @Column(name = "location_local", nullable = false, length = 50)
     private String locationLocal;
-
-//    @Builder
-//    private Location(String locationCountry, String locationCity, String locationLocal) {
-//        this.locationCountry = locationCountry;
-//        this.locationCity = locationCity;
-//        this.locationLocal = locationLocal;
-//    }
 }

@@ -53,19 +53,4 @@ public class Review {
 
     @Column(name = "review_date", nullable = false)
     private LocalDateTime reviewDate;
-
-//    @Builder
-//    private Review(User user, Room room, Float reviewCleanlinessRating, Float reviewAccuracyRating, Float reviewCheckInRating, Float reviewCommunicationRating, Float reviewLocationRating, Float reviewValueRating, String reviewContent, Float reviewAvg, LocalDateTime reviewDate) {
-//        this.user = user;
-//        this.room = room;
-//        this.reviewCleanlinessRating = reviewCleanlinessRating;
-//        this.reviewAccuracyRating = reviewAccuracyRating;
-//        this.reviewCheckInRating = reviewCheckInRating;
-//        this.reviewCommunicationRating = reviewCommunicationRating;
-//        this.reviewLocationRating = reviewLocationRating;
-//        this.reviewValueRating = reviewValueRating;
-//        this.reviewContent = reviewContent;
-//        this.reviewAvg = reviewAvg;
-//        this.reviewDate = reviewDate;
-//    }
 }
