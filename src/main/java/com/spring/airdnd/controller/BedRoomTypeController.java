@@ -1,6 +1,8 @@
 package com.spring.airdnd.controller;
-import com.spring.airdnd.dto.AmenityResponseDTO;
-import com.spring.airdnd.service.AmenityService;
+
+
+import com.spring.airdnd.dto.BedRoomTypeResponseDTO;
+import com.spring.airdnd.service.BedRoomTypeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/detail")
 @RequiredArgsConstructor
-public class AmenityController {
+@RequestMapping("/detail")
+public class BedRoomTypeController {
 
-    private final AmenityService amenityService;
+    private final BedRoomTypeService bedRoomTypeService;
 
-    @GetMapping("/amenity/{roomId}")
-    public ResponseEntity<List<AmenityResponseDTO>> getAmenities (@PathVariable Long roomId){
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(amenityService.getAmenities(roomId));
+    @GetMapping("/bedtype/{roomId}")
+    public ResponseEntity<List<BedRoomTypeResponseDTO>> getBedRoomTypeList(@PathVariable Long roomId){
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(bedRoomTypeService.getBedRoomTypeList(roomId));
     }
 }

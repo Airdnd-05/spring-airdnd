@@ -312,3 +312,10 @@ INSERT INTO `histogram_data` (price_range, count) VALUES
                                                        ('400000-409999', 9),
                                                        ('410000-419999', 6),
                                                        ('420000-429999', 4);
+
+
+
+INSERT INTO contents (content_component, content_name, content)
+VALUES
+    ('BookingOptionFilter', 'option1', '{"title":"셀프 체크인", "description": "숙소에 도착한 후 복잡한 절차 없이 쉽게 입실할 수 있습니다. "}'),
+    ('BookingOptionFilter', 'option2', '{"title": "반려동물 동반 가능", "description": "보조 동물을 동반하시나요?"}');

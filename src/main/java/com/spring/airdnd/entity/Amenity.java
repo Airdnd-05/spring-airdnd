@@ -30,4 +30,5 @@ public class Amenity {
 
     @Column(name = "amenity_name", nullable = false, length = 50)
     private String amenityName;
+
 }
