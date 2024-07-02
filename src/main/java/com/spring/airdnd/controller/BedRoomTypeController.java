@@ -1,8 +1,8 @@
-package com.spring.airdnd.controller.detailPage;
+package com.spring.airdnd.controller;
 
 
-import com.spring.airdnd.dto.detailPage.BedRoomTypeResponseDTO;
-import com.spring.airdnd.service.detailPage.BedRoomTypeService;
+import com.spring.airdnd.dto.BedRoomTypeResponseDTO;
+import com.spring.airdnd.service.BedRoomTypeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

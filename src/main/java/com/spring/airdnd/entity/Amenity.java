@@ -30,8 +30,5 @@ public class Amenity {
 
     @Column(name = "amenity_name", nullable = false, length = 50)
     private String amenityName;
-<<<<<<< HEAD
 
-=======
->>>>>>> 1353cc9f34d715720ce8da622dc08fc4d71af875
 }
